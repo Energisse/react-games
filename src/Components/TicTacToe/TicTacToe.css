@@ -1,0 +1,103 @@
+#tictactoe-container {
+  display: flex;
+  width: 300px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#tictactoe-grid {
+  display: flex;
+  width: 300px;
+  height: 300px;
+  flex-wrap: wrap;
+}
+
+#tictactoe-header span {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+#tictactoe-header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#tictactoe-curentplayer {
+  position: relative;
+  width: 40px;
+  height: 40px;
+}
+
+.tictactoe-cell {
+  flex: 1 0 33%; /* explanation below */
+  position: relative;
+}
+
+.tictactoe-cell-winner path,
+.tictactoe-cell-winner circle {
+  stroke: yellow !important;
+}
+
+.tictactoe-svg-cell {
+  position: absolute;
+  margin-top: 50%;
+  margin-left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  height: 60%;
+  width: 60%;
+}
+
+.tictactoe-svg-grid {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+}
+
+.tictactoe-svg-grid line {
+  stroke: white;
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-dasharray: 270;
+  stroke-dashoffset: 270;
+  animation: clock-animation 0.2s linear forwards;
+}
+
+.tictactoe-svg-grid line:nth-child(1) {
+  animation-delay: 200ms;
+}
+
+.tictactoe-svg-grid line:nth-child(2) {
+  animation-delay: 400ms;
+}
+
+.tictactoe-svg-grid line:nth-child(3) {
+  animation-delay: 600ms;
+}
+
+.tictactoe-svg-grid line:nth-child(4) {
+  animation-delay: 800ms;
+}
+
+circle {
+  fill: transparent;
+  stroke: lightgreen;
+  stroke-width: 10px;
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  animation: clock-animation 0.25s linear forwards;
+}
+
+@keyframes clock-animation {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.tictactoe-cross path {
+  stroke-dasharray: 150;
+  stroke-dashoffset: 150;
+  animation: clock-animation 0.25s linear forwards;
+  stroke-width: 10px;
+  stroke: lightskyblue;
+}
