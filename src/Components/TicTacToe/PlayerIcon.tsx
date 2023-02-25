@@ -6,7 +6,7 @@ export interface PlayerIconProps{
 }
 
 export default function PlayerIcon({player}:PlayerIconProps){
-    if(player == "X")return CrossIcon();
-    if(player == "O")return CircleIcon();
+    if(player === "X")return CrossIcon();
+    if(player === "O")return CircleIcon();
     return null;
 }

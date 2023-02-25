@@ -12,7 +12,7 @@ export default function LinkButton({name,path}:LinkButtonProps){
     return (
         <Button sx={{
             paddingBottom:0,
-            borderBottom: location.pathname == path ? "2px solid" : "é",
+            borderBottom: location.pathname === path ? "2px solid" : "é",
             borderRadius:0
         }}>
             <Link to={path} style={{textDecoration:"none",color:"inherit"}} >{name}</Link>

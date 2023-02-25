@@ -30,7 +30,8 @@
 }
 
 .tictactoe-cell {
-  flex: 1 0 33%; /* explanation below */
+  width: 100px;
+  height: 100px;
   position: relative;
 }
 
@@ -51,33 +52,13 @@
 
 .tictactoe-svg-grid {
   position: absolute;
-  width: 300px;
-  height: 300px;
 }
 
 .tictactoe-svg-grid line {
   stroke: white;
   stroke-width: 5;
   stroke-linecap: round;
-  stroke-dasharray: 270;
-  stroke-dashoffset: 270;
   animation: clock-animation 0.2s linear forwards;
-}
-
-.tictactoe-svg-grid line:nth-child(1) {
-  animation-delay: 200ms;
-}
-
-.tictactoe-svg-grid line:nth-child(2) {
-  animation-delay: 400ms;
-}
-
-.tictactoe-svg-grid line:nth-child(3) {
-  animation-delay: 600ms;
-}
-
-.tictactoe-svg-grid line:nth-child(4) {
-  animation-delay: 800ms;
 }
 
 circle {
@@ -101,4 +82,15 @@ circle {
   animation: clock-animation 0.25s linear forwards;
   stroke-width: 10px;
   stroke: lightskyblue;
+}
+
+#tictactoe-playerselection {
+  display: flex;
+}
+
+.tictactoe-button-playerselection {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  border-radius: 15px;
 }

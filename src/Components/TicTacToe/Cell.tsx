@@ -1,15 +1,23 @@
+import { useAppDispatch, useAppSelector } from "../../app/hooks"
 import PlayerIcon from "./PlayerIcon"
+import { play } from "./tictactoeSlice"
 
 export interface CellProps{
     value : string,
-    onClick : (index:number)=>void,
     index : number,
-    winner : boolean
 }
 
-export default function Cell({value,onClick,index,winner}:CellProps){
+export default function Cell({value,index}:CellProps){
+
+    const dispatch = useAppDispatch();
+    const {winnerPosition} = useAppSelector(state=>state.tictactoe);
+
+    function handleCellClick(){
+        dispatch(play(index))
+    }
+    
     return (
-        <div className={"tictactoe-cell "+ (winner === true ? "tictactoe-cell-winner":"")} onClick={()=>onClick(index)}>
+        <div className={"tictactoe-cell "+ (winnerPosition[index] === true ? "tictactoe-cell-winner":"")} onClick={handleCellClick}>
             <PlayerIcon player={value}/>
         </div>
     )
